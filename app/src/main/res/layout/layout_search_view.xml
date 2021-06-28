@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primary"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/searchButton"
+            style="@style/Widget.AppCompat.ActionButton"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@drawable/ic_search" />
+
+        <EditText
+            android:id="@+id/searchView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:autofillHints="@string/search"
+            android:background="@null"
+            android:hint="@string/search"
+            android:imeOptions="actionSearch|flagNoFullscreen"
+            android:importantForAutofill="auto"
+            android:inputType="text" />
+
+        <ImageView
+            android:id="@+id/closeButton"
+            style="@style/Widget.AppCompat.ActionButton"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_close" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:alpha="0.3"
+        android:background="#fafafa" />
+
+</LinearLayout>
