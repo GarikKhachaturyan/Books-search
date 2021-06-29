@@ -1,3 +1,8 @@
 package com.example.booksearch.model
 
-data class Book(val name: String)
+data class Book(
+    val id: String,
+    val title: String,
+    val authors: List<String>,
+    val thumbnailUrl: String?
+)

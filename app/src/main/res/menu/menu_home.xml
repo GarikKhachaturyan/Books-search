@@ -4,5 +4,6 @@
         android:id="@+id/searchItem"
         android:icon="@drawable/ic_search"
         android:title="@string/search"
-        app:actionLayout="@layout/layout_search_view" />
+        app:actionLayout="@layout/layout_search_view"
+        app:showAsAction="always" />
 </menu>
