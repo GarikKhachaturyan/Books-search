@@ -22,6 +22,7 @@
 
     <style name="ToolbarStyle" parent="Widget.MaterialComponents.Toolbar">
         <item name="android:background">@color/primary</item>
+        <item name="titleTextColor">@color/white</item>
     </style>
 
     <style name="TextAppearanceHeadline5Style" parent="@style/TextAppearance.MaterialComponents.Headline5">

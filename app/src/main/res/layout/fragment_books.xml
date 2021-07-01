@@ -10,8 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:contentInsetStart="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/menu_home" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/layout_search_view"/>
+
+    </androidx.appcompat.widget.Toolbar>
 
     <TextView
         android:id="@+id/noBookPlaceholderView"

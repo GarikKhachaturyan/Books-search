@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.booksearch.R
@@ -75,10 +76,10 @@ class BooksFragment : Fragment() {
     private fun initToolbar() {
         val toolbar = binding?.toolbar ?: return
 
-        val searchLayout = toolbar.menu.findItem(R.id.searchItem).actionView as ViewGroup
-        val closeButton = searchLayout.findViewById<View>(R.id.closeButton)
-        val searchButton = searchLayout.findViewById<View>(R.id.searchButton)
-        val searchView = searchLayout.findViewById<EditText>(R.id.searchView)
+        val closeButton = toolbar.findViewById<View>(R.id.closeButton)
+        val searchButton = toolbar.findViewById<View>(R.id.searchButton)
+        val searchView = toolbar.findViewById<EditText>(R.id.searchView)
+        val filterButton = toolbar.findViewById<View>(R.id.filterButton)
 
         closeButton.setVisible(!searchView.text.isNullOrEmpty())
         searchView.addTextChangedListener(object : SimpleTextWatcher() {
@@ -100,6 +101,10 @@ class BooksFragment : Fragment() {
         }
         searchButton.setOnClickListener {
             startSearchNow(searchView.text.toString())
+        }
+        filterButton.setOnClickListener {
+            val action = BooksFragmentDirections.actionBooksFragmentToSearchOptionsFragment()
+            findNavController().navigate(action)
         }
     }
 

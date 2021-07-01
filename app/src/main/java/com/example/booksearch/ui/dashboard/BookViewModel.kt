@@ -5,7 +5,6 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.booksearch.domain.BookRepository
-import com.example.booksearch.domain.BookSearchParam
 import com.example.booksearch.model.Book
 import com.example.booksearch.util.DataState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -22,13 +21,16 @@ class BookViewModel
 
     val books = MutableLiveData<DataState<List<Book>>>()
 
-    fun getBooks(bookName: String?) {
-        if (bookName.isNullOrBlank()) {
+    fun getBooks(searchText: String?) {
+        if (searchText.isNullOrBlank()) {
             books.value = DataState.Success(emptyList())
             return
         }
 
-        bookRepository.getBooks(BookSearchParam(bookName))
+        val bookSearchOptions = bookRepository.getBookSearchOptions()
+        val searchOption = bookSearchOptions.searchOptions[bookSearchOptions.selectedOptionOrdinal]
+
+        bookRepository.getBooks(searchText, searchOption)
             .onEach {dataState ->
                 books.value = dataState
             }
