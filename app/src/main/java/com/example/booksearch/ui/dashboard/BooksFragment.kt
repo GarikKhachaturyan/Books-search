@@ -10,9 +10,11 @@ import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.transition.TransitionInflater
 import com.example.booksearch.R
 import com.example.booksearch.databinding.FragmentBooksBinding
 import com.example.booksearch.model.Book
@@ -46,6 +48,8 @@ class BooksFragment : Fragment() {
                 }
             }
         }
+
+        exitTransition = TransitionInflater.from(requireContext()).inflateTransition(android.R.transition.fade)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -120,9 +124,12 @@ class BooksFragment : Fragment() {
         booksList.addItemDecoration(dividerItemDecoration)
 
         booksAdapter.itemClickListener = object : BooksAdapter.ItemClickListener {
-            override fun onItemClicked(book: Book) {
+            override fun onItemClicked(sharedImageView: View, book: Book) {
                 val action = BooksFragmentDirections.actionBooksFragmentToBookDetailsFragment(book)
-                findNavController().navigate(action)
+                val extras = FragmentNavigatorExtras(
+                    sharedImageView to book.id
+                )
+                findNavController().navigate(action, extras)
             }
         }
     }

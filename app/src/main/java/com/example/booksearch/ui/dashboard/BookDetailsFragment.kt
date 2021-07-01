@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.transition.TransitionInflater
 import coil.load
 import com.example.booksearch.R
 import com.example.booksearch.databinding.FragmentBookDetailsBinding
@@ -23,12 +24,15 @@ class BookDetailsFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         book = requireArguments().getParcelable("book")!!
+
+        sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding = FragmentBookDetailsBinding.inflate(inflater, container, false).also {
             binding = it
         }
+        binding.imageView.transitionName = book.id
         return binding.root
     }
 

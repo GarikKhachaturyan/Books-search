@@ -46,7 +46,7 @@ class BooksAdapter(context: Context) : ListAdapter<Book, BooksAdapter.BookHolder
     }
 
     interface ItemClickListener {
-        fun onItemClicked(book: Book)
+        fun onItemClicked(sharedImageView: View, book: Book)
     }
 
     inner class BookHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -62,11 +62,13 @@ class BooksAdapter(context: Context) : ListAdapter<Book, BooksAdapter.BookHolder
                 val position = absoluteAdapterPosition
                 if (position < 0) return@setOnClickListener
 
-                itemClickListener?.onItemClicked(getItem(position))
+                itemClickListener?.onItemClicked(imageView, getItem(position))
             }
         }
 
         fun bind(book: Book) {
+            imageView.transitionName = book.id
+
             titleView.text = book.title
             authorView.text = book.authors.joinToString("$separator ")
 
