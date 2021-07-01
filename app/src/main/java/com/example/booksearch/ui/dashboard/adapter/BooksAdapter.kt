@@ -16,6 +16,8 @@ import com.example.booksearch.model.Book
 
 class BooksAdapter(context: Context) : ListAdapter<Book, BooksAdapter.BookHolder>(diffCallback) {
 
+    var itemClickListener: ItemClickListener? = null
+
     private val separator = context.resources.getString(R.string.separator)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookHolder {
@@ -43,6 +45,10 @@ class BooksAdapter(context: Context) : ListAdapter<Book, BooksAdapter.BookHolder
         }
     }
 
+    interface ItemClickListener {
+        fun onItemClicked(book: Book)
+    }
+
     inner class BookHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         private val imageView = view.findViewById<ImageView>(R.id.imageView)
@@ -50,6 +56,15 @@ class BooksAdapter(context: Context) : ListAdapter<Book, BooksAdapter.BookHolder
         private val authorView = view.findViewById<TextView>(R.id.authorView)
 
         private var imageLoadDisposer: Disposable? = null
+
+        init {
+            view.setOnClickListener {
+                val position = absoluteAdapterPosition
+                if (position < 0) return@setOnClickListener
+
+                itemClickListener?.onItemClicked(getItem(position))
+            }
+        }
 
         fun bind(book: Book) {
             titleView.text = book.title

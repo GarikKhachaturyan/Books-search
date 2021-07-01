@@ -118,6 +118,13 @@ class BooksFragment : Fragment() {
 
         val dividerItemDecoration = DividerItemDecoration(context, LinearLayoutManager.VERTICAL)
         booksList.addItemDecoration(dividerItemDecoration)
+
+        booksAdapter.itemClickListener = object : BooksAdapter.ItemClickListener {
+            override fun onItemClicked(book: Book) {
+                val action = BooksFragmentDirections.actionBooksFragmentToBookDetailsFragment(book)
+                findNavController().navigate(action)
+            }
+        }
     }
 
     private fun startSearchNow(bookName: String?) {

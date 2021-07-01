@@ -10,5 +10,5 @@ fun BookDto.toBook(): Book? {
     if (thumbnailUrl != null && !thumbnailUrl.startsWith("https")) {
         thumbnailUrl = thumbnailUrl.replace("http", "https")
     }
-    return Book(id, title, authors, thumbnailUrl)
+    return Book(id, title, authors, volumeInfo.description, thumbnailUrl)
 }

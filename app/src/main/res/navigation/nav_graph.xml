@@ -9,10 +9,18 @@
         android:id="@+id/booksFragment"
         android:name="com.example.booksearch.ui.dashboard.BooksFragment"
         android:label="fragment_books"
-        tools:layout="@layout/fragment_books" >
+        tools:layout="@layout/fragment_books">
         <action
             android:id="@+id/action_booksFragment_to_searchOptionsFragment"
             app:destination="@id/searchOptionsFragment" />
+        <action
+            android:id="@+id/action_booksFragment_to_bookDetailsFragment"
+            app:destination="@id/bookDetailsFragment">
+            <argument
+                android:name="book"
+                app:argType="com.example.booksearch.model.Book"
+                app:nullable="false" />
+        </action>
     </fragment>
 
     <fragment
@@ -20,4 +28,11 @@
         android:name="com.example.booksearch.ui.dashboard.SearchOptionsFragment"
         android:label="fragment_search_options"
         tools:layout="@layout/fragment_search_options" />
+
+    <fragment
+        android:id="@+id/bookDetailsFragment"
+        android:name="com.example.booksearch.ui.dashboard.BookDetailsFragment"
+        android:label="fragment_book_details"
+        tools:layout="@layout/fragment_book_details" />
+
 </navigation>
