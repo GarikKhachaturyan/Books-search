@@ -21,7 +21,8 @@ class BookRepositoryImpl
         try {
             val booksData = bookService.getBooks(getSearchQuery(searchOption, searchText))
             val books = booksData.items?.mapNotNull { it.toBook() }
-            emit(DataState.Success(books ?: emptyList()))
+            val data = DataState.Success(books ?: emptyList())
+            emit(data)
         } catch (e: Exception) {
             emit(DataState.Error(e))
         }
