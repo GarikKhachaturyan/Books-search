@@ -1,19 +1,19 @@
 <resources>
     <string name="app_name">Book search</string>
 
-    <string name="search">Поиск</string>
-    <string name="no_book">Нужная книга всегда найдётся</string>
+    <string name="search">Search</string>
+    <string name="no_book">The right book will always be found</string>
     <string name="separator">,</string>
 
-    <string name="search_options">Параметры поиска</string>
-    <string name="select_search_option">Уточните параметры, по которым искать книги</string>
+    <string name="search_options">Search options</string>
+    <string name="select_search_option">Specify the parameters by which to search for books</string>
 
-    <string name="search_by_all">Поиск по всему</string>
-    <string name="search_by_author">По автору</string>
-    <string name="search_by_title">По названию</string>
-    <string name="search_by_genre">По жанру</string>
-    <string name="search_by_publisher">По издателю</string>
+    <string name="search_by_all">Search by anything</string>
+    <string name="search_by_author">by author</string>
+    <string name="search_by_title">by title</string>
+    <string name="search_by_genre">by genre</string>
+    <string name="search_by_publisher">by publisher</string>
 
-    <string name="description">Описание</string>
+    <string name="description">Description</string>
 
 </resources>

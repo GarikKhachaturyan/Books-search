@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Book search</string>
+
+    <string name="search">Поиск</string>
+    <string name="no_book">Нужная книга всегда найдётся</string>
+    <string name="separator">,</string>
+
+    <string name="search_options">Параметры поиска</string>
+    <string name="select_search_option">Уточните параметры, по которым искать книги</string>
+
+    <string name="search_by_all">Поиск по всему</string>
+    <string name="search_by_author">По автору</string>
+    <string name="search_by_title">По названию</string>
+    <string name="search_by_genre">По жанру</string>
+    <string name="search_by_publisher">По издателю</string>
+
+    <string name="description">Описание</string>
+
+</resources>

@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:navigationIcon="@drawable/ic_arrow_back" />
+        app:navigationIcon="@drawable/ic_arrow_back"/>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -64,8 +64,7 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/description"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textAppearance="?attr/textAppearanceHeadline6" />
 
             <TextView
                 android:id="@+id/descriptionView"
@@ -73,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:textAppearance="?textAppearanceHeadline6"
+                android:textAppearance="?attr/textAppearanceCaption"
                 tools:text="About flowers" />
 
         </LinearLayout>
