@@ -1,8 +1,8 @@
 package com.example.booksearch.domain
 
-import com.example.booksearch.model.Book
-import com.example.booksearch.model.SearchOption
-import com.example.booksearch.model.SearchOptionsData
+import com.example.booksearch.domain.models.Book
+import com.example.booksearch.domain.models.SearchOption
+import com.example.booksearch.domain.models.SearchOptionsData
 import com.example.booksearch.util.DataState
 import kotlinx.coroutines.flow.Flow
 

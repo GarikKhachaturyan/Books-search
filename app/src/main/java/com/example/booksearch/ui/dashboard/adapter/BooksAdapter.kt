@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.ListAdapter
 import coil.load
 import coil.request.Disposable
 import com.example.booksearch.R
-import com.example.booksearch.model.Book
+import com.example.booksearch.domain.models.Book
 
 class BooksAdapter(context: Context) : ListAdapter<Book, BooksAdapter.BookHolder>(diffCallback) {
 

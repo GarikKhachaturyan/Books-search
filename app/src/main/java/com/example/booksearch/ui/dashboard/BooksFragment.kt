@@ -8,7 +8,6 @@ import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.widget.SearchView
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
@@ -17,7 +16,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.transition.TransitionInflater
 import com.example.booksearch.R
 import com.example.booksearch.databinding.FragmentBooksBinding
-import com.example.booksearch.model.Book
+import com.example.booksearch.domain.models.Book
+import com.example.booksearch.ui.base.BaseFragment
 import com.example.booksearch.ui.dashboard.adapter.BooksAdapter
 import com.example.booksearch.ui.util.SimpleTextWatcher
 import com.example.booksearch.ui.util.setVisible
@@ -25,7 +25,7 @@ import com.example.booksearch.util.DataState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BooksFragment : Fragment() {
+class BooksFragment : BaseFragment() {
 
     private val bookViewModel: BookViewModel by viewModels()
 

@@ -1,4 +1,4 @@
-package com.example.booksearch.model
+package com.example.booksearch.domain.models
 
 class SearchOptionsData (
     val selectedOptionOrdinal: Int,

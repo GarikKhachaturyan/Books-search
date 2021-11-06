@@ -1,6 +1,7 @@
-package com.example.booksearch.network
+package com.example.booksearch.domain.converters
 
-import com.example.booksearch.model.Book
+import com.example.booksearch.domain.models.Book
+import com.example.booksearch.network.models.BookDto
 
 fun BookDto.toBook(): Book? {
     val id = id ?: return null

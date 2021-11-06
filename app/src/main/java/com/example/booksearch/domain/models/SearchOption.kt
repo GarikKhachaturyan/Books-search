@@ -1,4 +1,4 @@
-package com.example.booksearch.model
+package com.example.booksearch.domain.models
 
 import androidx.annotation.StringRes
 import com.example.booksearch.R

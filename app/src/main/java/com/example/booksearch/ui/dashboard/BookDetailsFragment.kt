@@ -4,17 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.transition.TransitionInflater
 import coil.load
 import com.example.booksearch.R
 import com.example.booksearch.databinding.FragmentBookDetailsBinding
-import com.example.booksearch.model.Book
+import com.example.booksearch.domain.models.Book
+import com.example.booksearch.ui.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BookDetailsFragment : Fragment() {
+class BookDetailsFragment : BaseFragment() {
 
     private var binding: FragmentBookDetailsBinding? = null
 

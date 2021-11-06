@@ -1,4 +1,9 @@
-package com.example.booksearch.network
+package com.example.booksearch.network.models
+
+class BooksDataDto (
+    val totalItems: Int? = null,
+    val items: List<BookDto>? = null
+)
 
 class BookDto(
     val id: String? = null,

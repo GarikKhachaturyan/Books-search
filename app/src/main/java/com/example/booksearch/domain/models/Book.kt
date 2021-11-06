@@ -1,4 +1,4 @@
-package com.example.booksearch.model
+package com.example.booksearch.domain.models
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

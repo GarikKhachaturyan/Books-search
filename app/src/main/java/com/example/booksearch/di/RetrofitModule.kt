@@ -17,23 +17,23 @@ object RetrofitModule {
 
     @Singleton
     @Provides
-    fun provideGsonBuilder(): Gson {
+    fun provideGson(): Gson {
         return GsonBuilder().create()
     }
 
     @Singleton
     @Provides
-    fun provideRetrofit(gson:  Gson): Retrofit.Builder {
+    fun provideRetrofit(gson:  Gson): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://www.googleapis.com/books/v1/")
             .addConverterFactory(GsonConverterFactory.create(gson))
+            .build()
     }
 
     @Singleton
     @Provides
-    fun provideBookService(retrofit: Retrofit.Builder): BookService {
+    fun provideBookService(retrofit: Retrofit): BookService {
         return retrofit
-            .build()
             .create(BookService::class.java)
     }
 }

@@ -5,7 +5,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.booksearch.domain.BookRepository
-import com.example.booksearch.model.Book
+import com.example.booksearch.domain.models.Book
 import com.example.booksearch.util.DataState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
@@ -31,7 +31,7 @@ class BookViewModel
         val searchOption = bookSearchOptions.searchOptions[bookSearchOptions.selectedOptionOrdinal]
 
         bookRepository.getBooks(searchText, searchOption)
-            .onEach {dataState ->
+            .onEach { dataState ->
                 books.value = dataState
             }
             .launchIn(viewModelScope)

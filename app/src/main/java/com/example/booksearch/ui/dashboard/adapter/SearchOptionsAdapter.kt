@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.booksearch.R
-import com.example.booksearch.model.SearchOption
+import com.example.booksearch.domain.models.SearchOption
 import com.example.booksearch.ui.util.setVisible
 
 class SearchOptionsAdapter : ListAdapter<SearchOptionsAdapter.Option, SearchOptionsAdapter.OptionHolder>(diffCallback) {

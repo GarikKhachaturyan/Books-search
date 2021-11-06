@@ -1,9 +1,9 @@
 package com.example.booksearch.domain
 
-import com.example.booksearch.model.SearchOption
-import com.example.booksearch.model.SearchOptionsData
+import com.example.booksearch.domain.converters.toBook
+import com.example.booksearch.domain.models.SearchOption
+import com.example.booksearch.domain.models.SearchOptionsData
 import com.example.booksearch.network.BookService
-import com.example.booksearch.network.toBook
 import com.example.booksearch.storage.Preferences
 import com.example.booksearch.util.DataState
 import kotlinx.coroutines.flow.flow

@@ -4,8 +4,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.example.booksearch.domain.BookRepository
-import com.example.booksearch.model.SearchOption
-import com.example.booksearch.model.SearchOptionsData
+import com.example.booksearch.domain.models.SearchOption
+import com.example.booksearch.domain.models.SearchOptionsData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

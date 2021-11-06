@@ -18,7 +18,7 @@
             app:destination="@id/bookDetailsFragment">
             <argument
                 android:name="book"
-                app:argType="com.example.booksearch.model.Book"
+                app:argType="com.example.booksearch.domain.models.Book"
                 app:nullable="false" />
         </action>
     </fragment>
